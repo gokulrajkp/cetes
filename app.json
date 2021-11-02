@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "cetes",
+    "slug": "cetes",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "cetes"
+}
