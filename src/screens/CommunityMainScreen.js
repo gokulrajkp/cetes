@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, FlatList, Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import MeterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Carousel from "react-native-snap-carousel";
 import Card_In_Community from "../component/Card_In_Community";
@@ -71,21 +71,42 @@ export default function CommunityMainScreen() {
           />
         </View>
       </View>
-      <View style={{ width: width, height: 200, marginTop: 5 }}>
+      <View style={{ width: "100%", height: 200, marginTop: 5 }}>
         <Carousel data={[2]} renderItem={renderItem} itemWidth={width} sliderWidth={width} />
       </View>
-      <View style={{ flexDirection: "row", marginLeft: 15, marginTop: 10, alignItems: "center", marginBottom: 8 }}>
-        <MeterialIcon name="alert-circle" size={26} color="#f5c440" />
-        <Text
+
+      {/* <View style={styles.highliter}> */}
+
+      <ImageBackground
+        source={require("../assets/vector.png")}
+        style={{ width: "100%", height: 80, marginTop: 10, marginBottom: 4 }}
+        resizeMode="contain"
+      >
+        <View
           style={{
-            color: "#3f3f3f",
-            marginLeft: 8,
-            textAlign: "center",
+            width: "100%",
+            backgroundColor: "rgba(205, 209, 206, 0.3)",
+            height: "100%",
+            alignItems: "center",
+            flexDirection: "row",
           }}
         >
-          If you are not a community member <Text style={{ color: "#fe382e" }}> REGISTER HERE!</Text>
-        </Text>
-      </View>
+          <MeterialIcon name="alert-circle" size={30} color="#f5c440" style={{ marginLeft: 4 }} />
+
+          <Text
+            style={{
+              color: "#000",
+              marginLeft: 8,
+              textAlign: "center",
+              fontWeight: "bold",
+            }}
+          >
+            If you are not a community member <Text style={{ color: "#fe382e" }}> REGISTER HERE!</Text>
+          </Text>
+        </View>
+      </ImageBackground>
+      {/* </View> */}
+
       {/* cards */}
       <View style={{ width: "100%", flexDirection: "row", flexWrap: "wrap", padding: 5 }}>
         {data.map((item, index) => (
@@ -102,5 +123,16 @@ const styles = StyleSheet.create({
     width: "100%",
     flexDirection: "row",
     padding: 4,
+  },
+  highliter: {
+    width: "100%",
+    height: 80,
+    flexDirection: "row",
+    marginLeft: 15,
+    marginTop: 10,
+    alignItems: "center",
+    marginBottom: 8,
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(19, 105, 170, 0.7)",
   },
 });
