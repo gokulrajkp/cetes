@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useRef } from "react";
-import { Dimensions, StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { Dimensions, StyleSheet, Text, View, Image, ScrollView, StatusBar } from "react-native";
 import Carrear from "../component/Carrear";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { Picker } from "@react-native-picker/picker";
@@ -23,8 +23,22 @@ export default function Profile() {
       <View>
         <ScrollView style={{ height: height - height / 4 }}>
           <View style={{ backgroundColor: "#0b1a30" }}>
-            <View style={{ flexDirection: "row" }}>
-              {/* <Text
+            <View style={{ margin: 10 }}>
+              <Text style={{ color: "#ffffff", fontSize: 18, marginTop: 8 }}>Profile</Text>
+              <View style={{ marginTop: 20, marginBottom: 20, flexDirection: "row" }}>
+                <Image
+                  source={require("../assets/profile_img.webp")}
+                  style={{ width: 60, height: 60, borderRadius: 30 }}
+                  resizeMode="cover"
+                />
+                <View style={{ justifyContent: "center", marginLeft: 18 }}>
+                  <Text style={{ color: "#ccd5dd", fontSize: 12 }}>Hello</Text>
+                  <Text style={{ color: "#ffffff", fontWeight: "bold", fontSize: 18 }}>Ronaldo</Text>
+                </View>
+              </View>
+            </View>
+            {/* <View style={{ flexDirection: "row" }}> */}
+            {/* <Text
                 style={{
                   textAlign: "center",
                   color: "#87b1e8",
@@ -36,11 +50,11 @@ export default function Profile() {
               >
                 Bio
               </Text> */}
-              <TouchableOpacity style={{ flexDirection: "row" }}>
+            {/* <TouchableOpacity style={{ flexDirection: "row" }}>
                 <MaterialIcon name="pencil" size={20} color="gray" />
                 <Text style={{ color: "white", paddingLeft: 10, paddingEnd: 10, fontSize: 16 }}>Edit</Text>
-              </TouchableOpacity>
-            </View>
+              </TouchableOpacity> */}
+            {/* </View>
             <View
               style={{
                 width: 120,
@@ -57,7 +71,7 @@ export default function Profile() {
                 resizeMode="cover"
               />
             </View>
-            <Text style={{ textAlign: "center", padding: 8, color: "white", fontWeight: "bold" }}>Ronaldo</Text>
+            <Text style={{ textAlign: "center", padding: 8, color: "white", fontWeight: "bold" }}>Ronaldo</Text> */}
           </View>
           <View style={{ marginTop: 6 }}>
             {/* <Profile_field /> */}
