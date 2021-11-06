@@ -85,7 +85,7 @@ export default function CommunityMainScreen() {
         <View
           style={{
             width: "100%",
-            backgroundColor: "rgba(205, 209, 206, 0.3)",
+            backgroundColor: "rgba(205, 209, 206, 0.6)",
             height: "100%",
             alignItems: "center",
             flexDirection: "row",

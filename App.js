@@ -6,12 +6,14 @@ import LogInScreen from "./src/screens/LogInScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Profile from "./src/screens/Profile";
+import Edit_Profile_Screen from "./src/screens/Edit_Profile_Screen";
 export default function App() {
   const Stack = createStackNavigator();
   return (
-    <CommunityMainScreen />
+    // <CommunityMainScreen />
     // <LogInScreen />
-    // <Profile />
+    <Profile />
+    // {/* <Edit_Profile_Screen /> */}
     // <NavigationContainer>
     //   <Stack.Navigator>
     //     <Stack.Screen name="Home" component={LogInScreen} />
