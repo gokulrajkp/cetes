@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get("screen");
 export default function Profile() {
   const bottomSheetRef = useRef(null);
 
-  const snapPoints = useMemo(() => ["25%", "55%"], []);
+  const snapPoints = useMemo(() => ["25%", "50%"], []);
 
   const handleSheetChanges = useCallback((index) => {
     console.log("handleSheetChanges", index);
@@ -21,378 +21,145 @@ export default function Profile() {
     <View style={styles.container}>
       <View>
         <ScrollView style={{ height: height - height / 4 }}>
-          <View style={{ backgroundColor: "#0b1a30" }}>
-            <View style={{ margin: 14 }}>
-              <Text
-                style={{
-                  color: "#ffffff",
-                  paddingTop: 10,
-                  paddingBottom: 10,
-                  fontSize: 20,
-                  letterSpacing: 0.6,
-                  fontWeight: "700",
-                }}
-              >
-                Profile
+          <View style={{ backgroundColor: "#564eb1", height: 220 }}>
+            <View style={{ justifyContent: "flex-end", alignSelf: "flex-end" }}>
+              <Fontawseome name="user-edit" color="#f4f4f4" size={18} style={{ paddingRight: 14, paddingTop: 14 }} />
+            </View>
+            <View style={{ alignItems: "center" }}>
+              <Image
+                source={require("../assets/profile_img.webp")}
+                style={{ width: 100, height: 100, borderRadius: 50 }}
+              />
+              <Text style={{ color: "#ffffff", marginTop: 8 }}>Ronaldo</Text>
+              <Text style={{ color: "#f4f4f4", fontSize: 12 }}>
+                123456 <Text style={{ color: "#f4f4f4", fontSize: 12 }}>-SETES </Text>
               </Text>
-              <View
-                style={{
-                  marginTop: 14,
-                  marginBottom: 14,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <View style={{ flexDirection: "row" }}>
-                  <Image
-                    source={require("../assets/profile_img.webp")}
-                    style={{ width: 70, height: 70, borderRadius: 35 }}
-                    resizeMode="cover"
-                  />
-                  <View style={{ justifyContent: "center", marginLeft: 18 }}>
-                    <Text style={{ fontSize: 12, color: "#616a73" }}>Hello</Text>
-                    <Text style={{ fontSize: 18, color: "#ffffff" }}>Ronaldo</Text>
-                  </View>
-                </View>
-                <View style={{ justifyContent: "center" }}>
-                  <Fontawseome name="user-edit" color="#f4f4f4" size={20} />
-                </View>
-              </View>
             </View>
           </View>
-          <View style={{ marginTop: 6 }}>
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          {/* Detail Component */}
+          <View style={{ marginTop: -20, backgroundColor: "#ffffff", borderRadius: 20 }}>
+            <View style={[styles.data_holder, { marginTop: 20 }]}>
               <Text style={styles.profile_label}>Email</Text>
               <Text style={styles.profile_label_data}>ronaldo@gmail.com</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Phone</Text>
               <Text style={styles.profile_label_data}>9923343423</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Gender</Text>
               <Text style={styles.profile_label_data}>Male</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Date of Birth</Text>
               <Text style={styles.profile_label_data}>23 -34-2021</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Blood Gorup</Text>
               <Text style={styles.profile_label_data}>B+</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>District</Text>
               <Text style={styles.profile_label_data}>Malapuram</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Zone</Text>
               <Text style={styles.profile_label_data}>Malapuram</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Home Ground</Text>
               <Text style={styles.profile_label_data}>Malapuram</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Favourite Position</Text>
               <Text style={styles.profile_label_data}>Sricker</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>See Fav Position</Text>
               <Text style={styles.profile_label_data}>Sricker</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Strong Foot</Text>
               <Text style={styles.profile_label_data}>left</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Boot Size</Text>
               <Text style={styles.profile_label_data}>9</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
 
-            <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+            <View style={styles.data_holder}>
               <Text style={styles.profile_label}>T-Shirt size</Text>
               <Text style={styles.profile_label_data}>M</Text>
-              <View
-                style={{
-                  alignSelf: "center",
-                  marginTop: 8,
-                  marginBottom: 8,
-                  width: "100%",
-                  height: 2,
-                  backgroundColor: "#dddddd",
-                }}
-              />
             </View>
           </View>
         </ScrollView>
       </View>
+      {/* Bottom sheet  */}
       <BottomSheet
         ref={bottomSheetRef}
         index={0}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
-        customStyles={{
-          wrapper: {
-            backgroundColor: "#e6e8f3",
-          },
-          draggableIcon: {
-            backgroundColor: "#e6e8f3",
-          },
-          container: {
-            backgroundColor: "#e6e8f3",
-          },
-        }}
+        backDropColor="red"
+        backgroundStyle={{ backgroundColor: "#aba8df" }}
+        // customStyles={{
+        //   wrapper: {
+        //     backgroundColor: "green",
+        //   },
+        //   draggableIcon: {
+        //     backgroundColor: "red",
+        //   },
+        //   container: {
+        //     backgroundColor: "#000",
+        //   },
+        // }}
         style={{
-          backgroundColor: "#e6e8f3",
+          // backgroundColor: "red",
           borderWidth: 1,
           borderColor: "#d4d4d4",
           backgroundColor: "#e6e8f3",
           elevation: 28,
           zIndex: 10,
-          borderRadius: 15,
+          borderRadius: 20,
         }}
       >
         <View style={styles.contentContainer}>
-          <Text style={{ textAlign: "center", fontWeight: "bold", padding: 6 }}>CARRER</Text>
+          <Text style={{ textAlign: "center", color: "#ffffff", fontWeight: "bold", padding: 6 }}>CARRER</Text>
 
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Goal</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Assist</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Interception</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Save</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
-            <Text style={styles.profile_label}>Save</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
-          </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Clean Sheet</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Free Kick Goal</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
-          <View style={{ width: "100%", paddingLeft: 12, paddingRight: 12 }}>
+          <View style={styles.data_holder}>
             <Text style={styles.profile_label}>Penalty Goal</Text>
             <Text style={styles.profile_label_data}>10</Text>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 8,
-                marginBottom: 8,
-                width: "100%",
-                height: 2,
-                backgroundColor: "#dddddd",
-              }}
-            />
           </View>
         </View>
       </BottomSheet>
@@ -404,42 +171,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // height: "100%",
-    backgroundColor: "#e6e8f3",
   },
   contentContainer: {
     flex: 1,
+    backgroundColor: "#aba8df",
     // backgroundColor: "#e6e8f3",
   },
-  credintials: {
-    flexDirection: "row",
-    margin: 8,
-    marginLeft: 12,
-    marginRight: 12,
-    padding: 6,
-    borderRadius: 4,
-    backgroundColor: "#aedcf2",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
+  data_holder: {
+    width: "100%",
+    paddingLeft: 20,
+    paddingRight: 20,
   },
-  profile_data_holder: {
-    width: "40%",
-  },
-  profile_data: {
-    color: "#ffffff",
-    textAlign: "left",
-  },
+
   profile_label: {
     fontWeight: "700",
     color: "#cac9cd",
+    marginTop: 6,
   },
   profile_label_data: {
-    padding: 2,
-    fontWeight: "700",
+    padding: 3,
+    fontWeight: "600",
     color: "#000",
   },
 });
