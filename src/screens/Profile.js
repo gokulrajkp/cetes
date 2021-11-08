@@ -1,5 +1,15 @@
 import React, { useCallback, useMemo, useRef } from "react";
-import { Dimensions, StyleSheet, Text, View, Image, ScrollView, StatusBar } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  StatusBar,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import Carrear from "../component/Carrear";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { Picker } from "@react-native-picker/picker";
@@ -21,7 +31,7 @@ export default function Profile() {
     <View style={styles.container}>
       <View>
         <ScrollView style={{ height: height - height / 4 }}>
-          <View style={{ backgroundColor: "#564eb1", height: 220 }}>
+          <View style={{ backgroundColor: "#564eb1", height: 230 }}>
             <View style={{ justifyContent: "flex-end", alignSelf: "flex-end" }}>
               <Fontawseome name="user-edit" color="#f4f4f4" size={18} style={{ paddingRight: 14, paddingTop: 14 }} />
             </View>
@@ -37,8 +47,9 @@ export default function Profile() {
             </View>
           </View>
           {/* Detail Component */}
-          <View style={{ marginTop: -20, backgroundColor: "#ffffff", borderRadius: 20 }}>
-            <View style={[styles.data_holder, { marginTop: 20 }]}>
+          <View style={{ marginTop: -35, backgroundColor: "#ffffff", borderRadius: 35 }}>
+            <Text style={{ justifyContent: "center", alignSelf: "center", marginTop: 4, fontWeight: "700" }}>Bio</Text>
+            <View style={[styles.data_holder, {}]}>
               <Text style={styles.profile_label}>Email</Text>
               <Text style={styles.profile_label_data}>ronaldo@gmail.com</Text>
             </View>
@@ -107,7 +118,7 @@ export default function Profile() {
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
         backDropColor="red"
-        backgroundStyle={{ backgroundColor: "#aba8df" }}
+        backgroundStyle={[styles.contanerImg, { backgroundColor: "#4d5940" }]}
         // customStyles={{
         //   wrapper: {
         //     backgroundColor: "green",
@@ -126,42 +137,64 @@ export default function Profile() {
           backgroundColor: "#e6e8f3",
           elevation: 28,
           zIndex: 10,
-          borderRadius: 20,
+          borderRadius: 35,
         }}
       >
-        <View style={styles.contentContainer}>
-          <Text style={{ textAlign: "center", color: "#ffffff", fontWeight: "bold", padding: 6 }}>CARRER</Text>
+        <ImageBackground
+          source={require("../assets/career_bg.jpeg")}
+          imageStyle={{}}
+          style={{ width: "100%", height: "100%" }}
+          resizeMode="cover"
+        >
+          <View style={styles.contentContainer}>
+            <Text style={{ textAlign: "center", color: "#ffffff", fontWeight: "bold", padding: 6 }}>CARRER</Text>
 
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Goal</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-          </View>
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Assist</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-          </View>
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Interception</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-          </View>
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Save</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-          </View>
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Clean Sheet</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-          </View>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Goal</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Assist</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Interception</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Save</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Clean Sheet</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
 
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Free Kick Goal</Text>
-            <Text style={styles.profile_label_data}>10</Text>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Free Kick Goal</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
+            <View style={styles.data_holder}>
+              <Text style={styles.profile_label}>Penalty Goal</Text>
+              <Text style={styles.profile_label_data_carrer}>10</Text>
+            </View>
+
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+                backgroundColor: "#e9e9e9",
+                padding: 8,
+                width: 80,
+                borderRadius: 6,
+                alignSelf: "center",
+                marginTop: 4,
+              }}
+            >
+              <Text style={{ color: "#000" }}>Share</Text>
+              <MaterialIcon name="share-variant" color="#000" size={20} />
+            </TouchableOpacity>
           </View>
-          <View style={styles.data_holder}>
-            <Text style={styles.profile_label}>Penalty Goal</Text>
-            <Text style={styles.profile_label_data}>10</Text>
-          </View>
-        </View>
+        </ImageBackground>
       </BottomSheet>
     </View>
   );
@@ -174,23 +207,38 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    backgroundColor: "#aba8df",
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(46, 51, 41, 0.8)",
+
     // backgroundColor: "#e6e8f3",
   },
   data_holder: {
     width: "100%",
     paddingLeft: 20,
     paddingRight: 20,
+    flexDirection: "row",
+    paddingTop: 10,
   },
 
   profile_label: {
     fontWeight: "700",
     color: "#cac9cd",
     marginTop: 6,
+    width: "35%",
   },
   profile_label_data: {
     padding: 3,
     fontWeight: "600",
     color: "#000",
+  },
+  contanerImg: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(46, 51, 41, 0.8)",
+  },
+  profile_label_data_carrer: {
+    padding: 3,
+
+    fontWeight: "600",
+    color: "#ffffff",
   },
 });
