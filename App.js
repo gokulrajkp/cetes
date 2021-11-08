@@ -12,8 +12,8 @@ export default function App() {
   return (
     // <CommunityMainScreen />
     // <LogInScreen />
-    // <Profile />
-    <Edit_Profile_Screen />
+    <Profile />
+    // <Edit_Profile_Screen />
     // <NavigationContainer>
     //   <Stack.Navigator>
     //     <Stack.Screen name="Home" component={LogInScreen} />
