@@ -21,7 +21,7 @@ const { width, height } = Dimensions.get("screen");
 export default function Profile() {
   const bottomSheetRef = useRef(null);
 
-  const snapPoints = useMemo(() => ["25%", "50%"], []);
+  const snapPoints = useMemo(() => ["25%", "70%"], []);
 
   const handleSheetChanges = useCallback((index) => {
     console.log("handleSheetChanges", index);
@@ -32,9 +32,48 @@ export default function Profile() {
       <View>
         <ScrollView style={{ height: height - height / 4 }}>
           <View style={{ backgroundColor: "#564eb1", height: 230 }}>
-            <View style={{ justifyContent: "flex-end", alignSelf: "flex-end" }}>
+            <View style={styles.container_top}>
+              <View style={{ flexDirection: "row" }}>
+                <MaterialIcon
+                  name="menu"
+                  color="#9e9d9b"
+                  size={25}
+                  style={{ alignSelf: "center" }}
+                />
+                <View style={{ marginLeft: 8, justifyContent: "center" }}>
+                  <Text style={{ fontWeight: "bold",color:"#ffffff" }}>SETES</Text>
+                  <Text style={{ fontSize: 12, lineHeight: 10,color:"#ffffff" }}>sports</Text>
+                </View>
+                <Text
+                  style={{ marginLeft: 6, marginTop: 6, alignSelf: "center",color:"#ffffff" }}
+                >
+                  COMMUNITY
+                </Text>
+              </View>
+
+              <View>
+                <Fontawseome
+                  name="user-edit"
+                  color="#f4f4f4"
+                  size={18}
+                  style={{ paddingRight: 14, paddingTop: 14 }}
+                />
+              </View>
+            </View>
+
+            {/* <View style={{ flexDirection: "row" }}>
+           <View style={{ marginLeft: 8, justifyContent: "center" }}>
+            <Text style={{ fontWeight: "bold" }}>SETES</Text>
+            <Text style={{ fontSize: 12, lineHeight: 10 }}>sports</Text>
+          </View>
+          <Text style={{ marginLeft: 6, marginTop: 6, alignSelf: "center" }}>COMMUNITY</Text>
+
+            <View style={{ justifyContent:"flex-end" }}>
+              
               <Fontawseome name="user-edit" color="#f4f4f4" size={18} style={{ paddingRight: 14, paddingTop: 14 }} />
             </View>
+        </View> */}
+
             <View style={{ alignItems: "center" }}>
               <Image
                 source={require("../assets/profile_img.webp")}
@@ -42,13 +81,29 @@ export default function Profile() {
               />
               <Text style={{ color: "#ffffff", marginTop: 8 }}>Ronaldo</Text>
               <Text style={{ color: "#f4f4f4", fontSize: 12 }}>
-                123456 <Text style={{ color: "#f4f4f4", fontSize: 12 }}>-SETES </Text>
+                123456{" "}
+                <Text style={{ color: "#f4f4f4", fontSize: 12 }}>-SETES </Text>
               </Text>
             </View>
           </View>
           {/* Detail Component */}
-          <View style={{ marginTop: -35, backgroundColor: "#ffffff", borderRadius: 35 }}>
-            <Text style={{ justifyContent: "center", alignSelf: "center", marginTop: 4, fontWeight: "700" }}>Bio</Text>
+          <View
+            style={{
+              marginTop: -35,
+              backgroundColor: "#ffffff",
+              borderRadius: 35,
+            }}
+          >
+            <Text
+              style={{
+                justifyContent: "center",
+                alignSelf: "center",
+                marginTop: 4,
+                fontWeight: "700",
+              }}
+            >
+              Bio
+            </Text>
             <View style={[styles.data_holder, {}]}>
               <Text style={styles.profile_label}>Email</Text>
               <Text style={styles.profile_label_data}>ronaldo@gmail.com</Text>
@@ -117,8 +172,13 @@ export default function Profile() {
         index={0}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
+        handleHeight={0}
+        containerHeight={220}
+        contentHeight
+        containerOffset
+        topInset={100}
         backDropColor="red"
-        backgroundStyle={[styles.contanerImg, { backgroundColor: "#4d5940" }]}
+        backgroundStyle={[styles.contanerImg, { backgroundColor: "#4d5940",borderTopLeftRadius:35,borderTopRightRadius:35 }]}
         // customStyles={{
         //   wrapper: {
         //     backgroundColor: "green",
@@ -135,19 +195,29 @@ export default function Profile() {
           borderWidth: 1,
           borderColor: "#d4d4d4",
           backgroundColor: "#e6e8f3",
-          elevation: 28,
-          zIndex: 10,
+          // elevation: 28,
+          // zIndex: 10,
           borderRadius: 35,
         }}
       >
         <ImageBackground
           source={require("../assets/career_bg.jpeg")}
-          imageStyle={{}}
-          style={{ width: "100%", height: "100%" }}
+          imageStyle={{borderRadius:10,}}
+          style={{ width: "100%", height: "100%",borderRadius:10,elevation:1,}}
           resizeMode="cover"
         >
           <View style={styles.contentContainer}>
-            <Text style={{ textAlign: "center", color: "#ffffff", fontWeight: "bold", padding: 6 }}>CARRER</Text>
+            <Text
+              style={{
+                textAlign: "center",
+                color: "#ffffff",
+                fontWeight: "bold",
+                padding: 6,
+                marginTop:12
+              }}
+            >
+              CARRER
+            </Text>
 
             <View style={styles.data_holder}>
               <Text style={styles.profile_label}>Goal</Text>
@@ -207,8 +277,9 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(46, 51, 41, 0.8)",
+    borderRadius:10,
+    // ...StyleSheet.absoluteFillObject,
+    // backgroundColor: "rgba(46, 51, 41, 0.8)",
 
     // backgroundColor: "#e6e8f3",
   },
@@ -232,13 +303,17 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   contanerImg: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(46, 51, 41, 0.8)",
+    // ...StyleSheet.absoluteFillObject,
+    // backgroundColor: "rgba(46, 51, 41, 0.8)",
   },
   profile_label_data_carrer: {
     padding: 3,
-
-    fontWeight: "600",
     color: "#ffffff",
+  },
+  container_top: {
+    justifyContent: "space-between",
+    width: "100%",
+    flexDirection: "row",
+    padding: 4,
   },
 });

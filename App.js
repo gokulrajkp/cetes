@@ -7,12 +7,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Profile from "./src/screens/Profile";
 import Edit_Profile_Screen from "./src/screens/Edit_Profile_Screen";
+import { RenderSheet, renderSheet } from "./src/screens/Sample";
 export default function App() {
   const Stack = createStackNavigator();
   return (
     // <CommunityMainScreen />
     // <LogInScreen />
-    <Profile />
+    // <Profile />
+    <RenderSheet/>
     // <Edit_Profile_Screen />
     // <NavigationContainer>
     //   <Stack.Navigator>
