@@ -15,13 +15,14 @@ import BottomSheet from "@gorhom/bottom-sheet";
 
 function customBackground({ pointerEvents, style }) {
   return (
-    <ImageBackground
-      source={require("../assets/carrer_img.png")}
-      style={{ width: "100%", height: "100%" }}
-      resizeMode="cover"
-    >
-      <Text>sdfs</Text>
-    </ImageBackground>
+    // <ImageBackground
+    //   source={require("../assets/carrer_img.png")}
+    //   style={{ width: "100%", height: "100%" }}
+    //   resizeMode="cover"
+    // >
+    // <Text>sdfs</Text>
+    // </ImageBackground>
+    <View style={{ width: "100%", height: 100, backgroundColor: "#ff0000" }}></View>
   );
 }
 
