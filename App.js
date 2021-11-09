@@ -13,8 +13,8 @@ export default function App() {
   return (
     // <CommunityMainScreen />
     // <LogInScreen />
-    // <Profile />
-    <RenderSheet/>
+    <Profile />
+    // <RenderSheet/>
     // <Edit_Profile_Screen />
     // <NavigationContainer>
     //   <Stack.Navigator>
