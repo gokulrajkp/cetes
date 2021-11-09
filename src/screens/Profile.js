@@ -33,7 +33,7 @@ export default function Profile() {
       <ImageBackground
         imageStyle={{}}
         source={require("../assets/carrer_img.png")}
-        style={{ width: "100%", height: "100%", marginTop: 40 }}
+        style={{ width: "100%", height: "100%", marginTop: 80  }}
         resizeMode="contain"
       >
         {/* <LinearGradient
@@ -43,23 +43,23 @@ export default function Profile() {
           style={{ backgroundColor: "#000", width: "100%", height: 100, position: "absolute", bottom: 0 }}
         ></LinearGradient> */}
         <View style={styles.contanerImg}>
-          <View style={{ width: 50, height: 2, backgroundColor: "#ffffff", margin: 10, alignSelf: "center" }} />
+          <View style={{ width: 50, height: 2, backgroundColor: "#ffffff", marginTop:10, alignSelf: "center" }} />
         </View>
         <View style={styles.contentContainer}>
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: "row" ,marginTop:-40}}>
             <View style={{ justifyContent: "center", alignSelf: "center", alignItems: "center" }}>
               <Text
                 style={{
                   textAlign: "center",
                   color: "#ffffff",
                   fontWeight: "bold",
-                  padding: 6,
+                  // padding: 6,
                   fontSize: 16,
                   alignSelf: "center",
                   alignItems: "center",
                   justifyContent: "center",
                   // marginTop: 28,
-                  marginLeft: 160,
+                  marginLeft: 170,
                 }}
               >
                 CARRER
@@ -96,7 +96,15 @@ export default function Profile() {
             <Text style={styles.profile_label_data_carrer}>10</Text>
           </View>
           <View style={styles.data_holder_carrer}>
-            <Text style={styles.profile_label_carrer}>Assist</Text>
+            <Text style={styles.profile_label_carrer}>Assistant</Text>
+            <Text style={styles.profile_label_data_carrer}>10</Text>
+          </View>
+          <View style={styles.data_holder_carrer}>
+            <Text style={styles.profile_label_carrer}>Free Kick </Text>
+            <Text style={styles.profile_label_data_carrer}>10</Text>
+          </View>
+          <View style={styles.data_holder_carrer}>
+            <Text style={styles.profile_label_carrer}>Penalty Goal</Text>
             <Text style={styles.profile_label_data_carrer}>10</Text>
           </View>
           <View style={styles.data_holder_carrer}>
@@ -111,15 +119,11 @@ export default function Profile() {
             <Text style={styles.profile_label_carrer}>Clean Sheet</Text>
             <Text style={styles.profile_label_data_carrer}>10</Text>
           </View>
+          <View style={styles.data_holder_carrer}>
+            <Text style={styles.profile_label_carrer}>Penalty Save</Text>
+            <Text style={styles.profile_label_data_carrer}>10</Text>
+          </View>
 
-          <View style={styles.data_holder_carrer}>
-            <Text style={styles.profile_label_carrer}>Free Kick Goal</Text>
-            <Text style={styles.profile_label_data_carrer}>10</Text>
-          </View>
-          <View style={styles.data_holder_carrer}>
-            <Text style={styles.profile_label_carrer}>Penalty Goal</Text>
-            <Text style={styles.profile_label_data_carrer}>10</Text>
-          </View>
 
           {/* <TouchableOpacity
             style={{
@@ -190,7 +194,7 @@ export default function Profile() {
             borderRadius: 35,
             // flex: 1,
             // height: height - 65,
-            paddingBottom: 200,
+            paddingBottom: 80,
           }}
         >
           <Text
@@ -267,7 +271,7 @@ export default function Profile() {
       {/* </View> */}
       {/* Bottom sheet  */}
 
-      <BottomSheet ref={sheetRef} snapPoints={["30%", "70%", "30%"]} borderRadius={35} renderContent={renderContent} />
+      <BottomSheet ref={sheetRef} snapPoints={["10%", "71%", "10%"]} borderRadius={35} renderContent={renderContent} />
 
       {/* <BottomSheet
         ref={bottomSheetRef}
@@ -393,7 +397,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     flexDirection: "row",
-    paddingTop: 10,
+    paddingTop: 8,
   },
 
   profile_label: {
@@ -412,7 +416,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(146, 142, 218, 0.6)",
     flex: 1,
     height: "100%",
-    marginTop: -40,
+    marginTop: -80,
   },
   profile_label_data_carrer: {
     padding: 3,
