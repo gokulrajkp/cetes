@@ -154,35 +154,33 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       {/* <View> */}
-      <ScrollView style={{}}>
-        <View style={{ backgroundColor: "#564eb1", paddingBottom: 35 }}>
-          <View style={styles.container_top}>
-            <View style={{ flexDirection: "row" }}>
-              <MaterialIcon name="menu" color="#9e9d9b" size={25} style={{ alignSelf: "center" }} />
-              <View style={{ marginLeft: 8, justifyContent: "center" }}>
-                <Text style={{ fontWeight: "bold", color: "#ffffff" }}>SETES</Text>
-                <Text style={{ fontSize: 12, lineHeight: 10, color: "#ffffff" }}>sports</Text>
-              </View>
-              <Text style={{ marginLeft: 6, marginTop: 6, alignSelf: "center", color: "#ffffff" }}>COMMUNITY</Text>
-            </View>
 
-            <View>
-              <Fontawseome name="user-edit" color="#f4f4f4" size={18} style={{ paddingRight: 14, paddingTop: 14 }} />
+      <View style={{ backgroundColor: "#564eb1", paddingBottom: 35 }}>
+        <View style={styles.container_top}>
+          <View style={{ flexDirection: "row" }}>
+            <MaterialIcon name="menu" color="#9e9d9b" size={25} style={{ alignSelf: "center" }} />
+            <View style={{ marginLeft: 8, justifyContent: "center" }}>
+              <Text style={{ fontWeight: "bold", color: "#ffffff" }}>SETES</Text>
+              <Text style={{ fontSize: 12, lineHeight: 10, color: "#ffffff" }}>sports</Text>
             </View>
+            <Text style={{ marginLeft: 6, marginTop: 6, alignSelf: "center", color: "#ffffff" }}>COMMUNITY</Text>
           </View>
 
-          <View style={{ alignItems: "center", marginBottom: 10 }}>
-            <Image
-              source={require("../assets/profile_img.webp")}
-              style={{ width: 100, height: 100, borderRadius: 50 }}
-            />
-            <Text style={{ color: "#ffffff", marginTop: 8 }}>Ronaldo</Text>
-            <Text style={{ color: "#f4f4f4", fontSize: 12 }}>
-              123456 <Text style={{ color: "#f4f4f4", fontSize: 12 }}>-SETES </Text>
-            </Text>
+          <View>
+            <Fontawseome name="user-edit" color="#f4f4f4" size={18} style={{ paddingRight: 14, paddingTop: 14 }} />
           </View>
         </View>
-        {/* Detail Component */}
+
+        <View style={{ alignItems: "center", marginBottom: 10 }}>
+          <Image source={require("../assets/profile_img.webp")} style={{ width: 100, height: 100, borderRadius: 50 }} />
+          <Text style={{ color: "#ffffff", marginTop: 8 }}>Ronaldo</Text>
+          <Text style={{ color: "#f4f4f4", fontSize: 12 }}>
+            123456 <Text style={{ color: "#f4f4f4", fontSize: 12 }}>-SETES </Text>
+          </Text>
+        </View>
+      </View>
+      {/* Detail Component */}
+      <ScrollView style={{ marginTop: -35, borderRadius: 35 }}>
         <View
           style={{
             marginTop: -35,
@@ -267,7 +265,7 @@ export default function Profile() {
       {/* </View> */}
       {/* Bottom sheet  */}
 
-      <BottomSheet ref={sheetRef} snapPoints={["30%", "70%", "30%"]} borderRadius={35} renderContent={renderContent} />
+      <BottomSheet ref={sheetRef} snapPoints={["30%", "71%", "30%"]} borderRadius={35} renderContent={renderContent} />
 
       {/* <BottomSheet
         ref={bottomSheetRef}
