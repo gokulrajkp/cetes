@@ -33,7 +33,7 @@ export default function Profile() {
       <ImageBackground
         imageStyle={{}}
         source={require("../assets/carrer_img.png")}
-        style={{ width: "100%", height: "100%", marginTop: 80  }}
+        style={{ width: "100%", height: "100%", marginTop: 80 }}
         resizeMode="contain"
       >
         {/* <LinearGradient
@@ -43,10 +43,10 @@ export default function Profile() {
           style={{ backgroundColor: "#000", width: "100%", height: 100, position: "absolute", bottom: 0 }}
         ></LinearGradient> */}
         <View style={styles.contanerImg}>
-          <View style={{ width: 50, height: 2, backgroundColor: "#ffffff", marginTop:10, alignSelf: "center" }} />
+          <View style={{ width: 50, height: 2, backgroundColor: "#ffffff", marginTop: 10, alignSelf: "center" }} />
         </View>
         <View style={styles.contentContainer}>
-          <View style={{ flexDirection: "row" ,marginTop:-40}}>
+          <View style={{ flexDirection: "row", marginTop: -40 }}>
             <View style={{ justifyContent: "center", alignSelf: "center", alignItems: "center" }}>
               <Text
                 style={{
@@ -123,7 +123,6 @@ export default function Profile() {
             <Text style={styles.profile_label_carrer}>Penalty Save</Text>
             <Text style={styles.profile_label_data_carrer}>10</Text>
           </View>
-
 
           {/* <TouchableOpacity
             style={{
@@ -269,11 +268,7 @@ export default function Profile() {
       {/* </View> */}
       {/* Bottom sheet  */}
 
-<<<<<<< HEAD
       <BottomSheet ref={sheetRef} snapPoints={["30%", "71%", "30%"]} borderRadius={35} renderContent={renderContent} />
-=======
-      <BottomSheet ref={sheetRef} snapPoints={["10%", "71%", "10%"]} borderRadius={35} renderContent={renderContent} />
->>>>>>> 9469882627d61b1a35ec79340f21e6b7c7d02447
 
       {/* <BottomSheet
         ref={bottomSheetRef}
